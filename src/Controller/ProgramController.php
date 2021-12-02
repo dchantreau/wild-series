@@ -13,7 +13,7 @@ class ProgramController extends AbstractController
     /**
      * Show all rows from Program's entity
      *
-     * @Route("/",name="program_index")
+     * @Route("/show/",name="program_index")
      * @return Response A response instance
      */
     public function index(): Response
