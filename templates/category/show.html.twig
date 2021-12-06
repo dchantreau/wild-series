@@ -14,7 +14,11 @@
         Aucune série trouvée.
     {% endfor %}
 
-    <a href="{{ path('category_index') }}">
+    <a class = "button" href="{{ path('category_index') }}">
         Retour à la liste des catégories
+    </a>
+    <br>
+    <a class = "button" href="{{ path('app_index') }}">
+        Retour à l'accueil
     </a>
 {% endblock %}

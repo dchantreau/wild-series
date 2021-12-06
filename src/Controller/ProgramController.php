@@ -13,7 +13,7 @@ class ProgramController extends AbstractController
     /**
      * Show all rows from Program's entity
      *
-     * @Route("/show/",name="program_index")
+     * @Route("/program/",name="program_index")
      * @return Response A response instance
      */
     public function index(): Response
@@ -23,7 +23,7 @@ class ProgramController extends AbstractController
         ->findAll();
 
         return $this->render(
-            'program/index.html.twig',
+            'program/program.html.twig',
             ['programs' => $programs]
         );
     }
@@ -31,7 +31,7 @@ class ProgramController extends AbstractController
     /**
  * Getting a program by id
  *
- * @Route("/show/{id<^[0-9]+$>}", name="program_show")
+ * @Route("/program/{id<^[0-9]+$>}", name="program_show")
  * @return Response
  */
 public function show(int $id):Response

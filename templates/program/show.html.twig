@@ -4,9 +4,9 @@
 
 {% block body %}
     <div class="media">
-        <img class="align-self-start mr-3" src="{{program.poster}}" alt="{{ program.title }} poster">
-        <div class="media-body">
-            <h1 class="mt-0">{{ program.title }}</h1>
+        <img class="poster" src="{{program.poster}}" alt="{{ program.title }} poster">
+        <div class="desc">
+            <h1>{{ program.title }}</h1>
             <p>{{ program.summary }}</p>
             <p>Catégorie : {{ program.category.name }}</p>
         </div>
@@ -15,4 +15,10 @@
     <a href="{{ path('program_index') }}">
         Retour à la liste des programmes
     </a>
+    <br>
+    <div>
+        <a class = "button" href="{{ path('app_index') }}">
+            Retour à l'accueil
+        </a>
+    </div>
 {% endblock %}
