@@ -3,10 +3,12 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <h1>Notre Sélection:</h1>
+    <h1>Nos séries</h1>
         {% for program in programs %}
         <div class = "film">
-            <a  href="{{ path("program_show", { id: program.id }) }}"><img class="poster" href="{{ path("program_show", { id: program.id }) }}" src="{{program.poster}}" alt="{{ program.title }}" ></a>
+        <a  href="{{ path("program_show", { program: program.id }) }}">
+            <img class="poster" src="{{program.poster}}" alt="{{ program.title }}" >
+            </a>
             {# Lien vers la fiche de la série : #}
         </div>
     {% else %}

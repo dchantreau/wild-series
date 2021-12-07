@@ -5,20 +5,28 @@
 {% block body %}
     <div class="media">
         <img class="poster" src="{{program.poster}}" alt="{{ program.title }} poster">
-        <div class="desc">
-            <h1>{{ program.title }}</h1>
-            <p>{{ program.summary }}</p>
-            <p>Catégorie : {{ program.category.name }}</p>
-        </div>
+            <div class="desc">
+                <h1>{{ program.title }}</h1>
+                    <p>{{ program.summary }}</p>
+                        <p>Catégorie : {{ program.category.name }}</p>
+            </div>
+            <div class = "saison">
+            {% for season in program.seasons %}
+
+                <a  href="{{ path("program_season_show", { program: program.id , season: season.id }) }}">{{ season.description }}</a>
+                {# Lien vers la fiche de la saison : #}
+
+            {% else %}
+                Aucune saison trouvée.
+            {% endfor %}
+            </div>
     </div>
 
     <a href="{{ path('program_index') }}">
         Retour à la liste des programmes
     </a>
-    <br>
-    <div>
-        <a class = "button" href="{{ path('app_index') }}">
-            Retour à l'accueil
-        </a>
-    </div>
+        <br>
+    <a class = "button" href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
 {% endblock %}
