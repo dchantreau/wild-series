@@ -7,7 +7,7 @@
         <h2>Saison {{ season.number }}</h2>
         {% for episode in episodes %}
             <div>
-            <a>{{ episode.number }}) {{ episode.title }} href = href="{{ path("program_episode_show", { program: program.id , season: season.id,episode: episode.id }) }}"</a>
+            <a href="{{ path("program_episode_show", { program: program.id , season: season.id,episode: episode.id }) }}">{{ episode.number }}) {{ episode.title }} </a>
             <p>{{ episode.synopsis }}</p>
             {# Lien vers l'épisode : #}
             </div>
