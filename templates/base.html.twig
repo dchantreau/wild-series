@@ -5,15 +5,34 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
+            <link rel="stylesheet" href="/assets/style.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto:wght@300&display=swap" rel="stylesheet"
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            <script src="script.js"></script>
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <header>
+            <nav>
+                <div class ="entête">
+                    <a class = "nomdutilisateur" >👨‍💻 John Doe</a>
+                    <a class = "marque" href="{{ path('app_index') }}">Wild-Series 🤓</a>
+                    <div><a class = "button">Déconnexion</a></div>
+                </div>
+            </nav>
+            <nav>
+                <ul class = "menu">
+                    <li><a href="/category/">Catégories</a></li>
+                    <li><a href="/program/">Séries</a></li>
+                    <li><a href="/new_category/">Ajouter une catégorie</a><li>
+                    <li><a href="/new_program/">Ajouter une série</a><li>
+                </ul>
+            </nav>
+        </header>
+        {% block body %}
+        {% endblock %}
     </body>
 </html>
